@@ -10,7 +10,9 @@
     "integration"
   ],
   "default_integration_branch": "integration",
-  "active_tasks": [],
+  "active_tasks": [
+    "BOOT-003"
+  ],
   "completed_tasks": [
     "BOOT-002"
   ],
@@ -48,13 +50,13 @@
     "change_request_schema_present": true,
     "skill_registry_present": true,
     "permissions_policy_present": true,
-    "ci_skeleton_present": false,
+    "ci_skeleton_present": true,
     "codex_connection_tested": true,
     "claude_connection_tested": false,
     "parallel_branch_test_passed": false,
     "branch_protection_enforced": false,
     "repository_private": false,
-    "research_workflow_present": false,
-    "initial_research_backlog_present": false
+    "research_workflow_present": true,
+    "initial_research_backlog_present": true
   }
 }
