@@ -1,0 +1,29 @@
+name: Bootstrap CI
+
+on:
+  pull_request:
+    branches: [integration, main]
+  push:
+    branches: [integration]
+
+jobs:
+  bootstrap-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate required bootstrap files and JSON
+        shell: python
+        run: |
+          import json, pathlib, sys
+          required = [
+              'MASTER.md','AGENTS.md','CLAUDE.md','PROJECT_STATE.json',
+              'TASK_PROTOCOL.md','PERMISSIONS.md',
+              'schemas/TASK_SCHEMA.json','schemas/CHANGE_REQUEST_SCHEMA.json',
+              'skills/registry/SKILL_REGISTRY.json'
+          ]
+          missing = [p for p in required if not pathlib.Path(p).exists()]
+          if missing:
+              raise SystemExit('Missing required files: ' + ', '.join(missing))
+          for p in ['PROJECT_STATE.json','schemas/TASK_SCHEMA.json','schemas/CHANGE_REQUEST_SCHEMA.json','skills/registry/SKILL_REGISTRY.json']:
+              json.loads(pathlib.Path(p).read_text(encoding='utf-8'))
+          print('Bootstrap files present and JSON syntax valid.')
