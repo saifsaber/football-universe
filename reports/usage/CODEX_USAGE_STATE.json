@@ -1,0 +1,21 @@
+{
+  "observed_at": "2026-09-17T18:40:50.9538570+00:00",
+  "timezone": "Africa/Cairo",
+  "source": "Codex get_usage_limits",
+  "weekly_reset_at": "2026-09-22T12:03:37.0000000+00:00",
+  "short_window_reset_at": "2026-09-17T18:47:54.0000000+00:00",
+  "monthly_reset_at": null,
+  "weekly_remaining": 20,
+  "short_window_remaining": 10,
+  "daily_remaining": null,
+  "monthly_remaining": null,
+  "units": "percent of account-wide window capacity",
+  "remaining_scheduled_runs_this_week": 19,
+  "protected_weekly_reserve_percent": 25,
+  "minimum_weekly_reserve_percent": 20,
+  "safe_run_budget_estimate": 0,
+  "safe_run_budget_units": "percentage points of weekly capacity",
+  "confidence": "MEDIUM",
+  "status": "RESERVE_ONLY",
+  "notes": "Observed indicators are account-wide rounded percentages, not exact tokens or per-task costs. The primary window is five hours, not a daily allowance. Daily/monthly quotas and model consumption rates are unavailable. Use 25% reserve while bootstrap is uncertain; even the 20% minimum leaves zero discretionary budget. Only the explicitly requested policy/scheduler setup is being completed now; no emergency spend authorization is inferred. Recheck fresh usage before future work; these prompt-level controls are not a hard quota cap."
+}

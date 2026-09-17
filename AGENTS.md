@@ -21,6 +21,12 @@ This file adapts the master operating system for Codex; it does not override it.
 
 ## 2. Codex role
 
+### Human Owner operating-policy adoption (2026-09-17)
+
+For scheduled work, read `CODEX_AUTONOMOUS_6H_BUDGETED.md` (version 1.1), adopted by the Human Owner. It supplements this adapter and preserves MASTER.md as the highest repository authority. Current execution is Codex-only: use a fresh independent Codex reviewer for critical work instead of the historical preferred Claude review below. Do not assign Claude work or block merely because Claude is unavailable. Other approval, task, phase, and merge gates remain applicable; do not silently change MASTER.md or PROJECT_STATE.json to resolve policy conflicts.
+
+Run at 00:00, 06:00, 12:00, and 18:00 Africa/Cairo. Inspect fresh usage before substantive work; preserve the weekly reserve and record observations in `reports/usage/CODEX_USAGE_STATE.json` on an authorized task branch, or an approved local equivalent. Unknown limits remain null. The quota rules are agent stop rules, not a runtime-enforced spending cap. Follow the owner-approved policy from the adoption branch until its PR is merged, then use integration.
+
 Codex acts as:
 - integration lead when explicitly assigned,
 - implementation worker for tasks labeled `agent:codex`,
