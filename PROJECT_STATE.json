@@ -1,0 +1,54 @@
+{
+  "project_name": "football-universe",
+  "master_version": "0.1-bootstrap",
+  "spec_version": "0.1-bootstrap",
+  "mode": "DESIGN",
+  "phase": "BOOTSTRAP",
+  "release_status": "NOT_READY",
+  "protected_branches": [
+    "main",
+    "integration"
+  ],
+  "default_integration_branch": "integration",
+  "active_tasks": [],
+  "completed_tasks": [],
+  "blocked_tasks": [],
+  "change_requests": [],
+  "task_proposals": [],
+  "approved_skills": [],
+  "pending_skill_requests": [],
+  "current_gate": "BOOTSTRAP",
+  "next_gate": "G0_RESEARCH_COVERAGE",
+  "human_approvals_required_for": [
+    "external_skill_installation",
+    "new_paid_service",
+    "new_secret_or_credential_scope",
+    "destructive_change",
+    "legal_or_licensing_commitment",
+    "post_freeze_architecture_change",
+    "release_to_production"
+  ],
+  "agent_policy": {
+    "direct_push_to_main": false,
+    "direct_push_to_integration": false,
+    "self_created_implementation_tasks": false,
+    "silent_spec_changes": false,
+    "unapproved_dependency_installation": false,
+    "cross_model_review_for_critical_work": true
+  },
+  "bootstrap_checklist": {
+    "master_md_present": true,
+    "integration_branch_created": true,
+    "agents_md_present": false,
+    "claude_md_present": false,
+    "project_state_present": false,
+    "task_schema_present": false,
+    "change_request_schema_present": false,
+    "skill_registry_present": false,
+    "permissions_policy_present": false,
+    "ci_skeleton_present": false,
+    "codex_connection_tested": false,
+    "claude_connection_tested": false,
+    "parallel_branch_test_passed": false
+  }
+}
