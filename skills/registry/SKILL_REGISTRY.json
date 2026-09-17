@@ -1,0 +1,15 @@
+{
+  "registry_version": "0.1-bootstrap",
+  "policy": {
+    "default_installation": "DENY",
+    "human_approval_required": true,
+    "pin_exact_version_or_commit": true,
+    "sandbox_test_required": true,
+    "security_review_required": true,
+    "allow_blind_shell_installers": false,
+    "allow_hidden_paid_services": false
+  },
+  "approved_skills": [],
+  "pending_requests": [],
+  "rejected_skills": []
+}
