@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Football Studio Change Request",
+  "type": "object",
+  "required": [
+    "change_id",
+    "status",
+    "created_by",
+    "affected_spec",
+    "problem",
+    "evidence",
+    "impact",
+    "suggested_change",
+    "blocking",
+    "human_approval_required"
+  ],
+  "properties": {
+    "change_id":{"type":"string","pattern":"^CR-[0-9]{3,}$"},
+    "status":{"enum":["PROPOSED","UNDER_REVIEW","APPROVED","REJECTED","IMPLEMENTED"]},
+    "created_by":{"type":"string"},
+    "created_during_task":{"type":["string","null"]},
+    "affected_spec":{"type":"string"},
+    "problem":{"type":"string","minLength":5},
+    "evidence":{"type":"array","items":{"type":"string"},"minItems":1},
+    "impact":{"type":"string"},
+    "suggested_change":{"type":"string"},
+    "alternatives":{"type":"array","items":{"type":"string"}},
+    "blocking":{"type":"boolean"},
+    "human_approval_required":{"type":"boolean"},
+    "decision":{"type":["string","null"]},
+    "approved_by":{"type":["string","null"]},
+    "implemented_by_task":{"type":["string","null"]}
+  },
+  "additionalProperties": false
+}
