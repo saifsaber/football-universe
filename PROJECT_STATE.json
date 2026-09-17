@@ -11,7 +11,9 @@
   ],
   "default_integration_branch": "integration",
   "active_tasks": [],
-  "completed_tasks": [],
+  "completed_tasks": [
+    "BOOT-002"
+  ],
   "blocked_tasks": [],
   "change_requests": [],
   "task_proposals": [],
@@ -39,16 +41,20 @@
   "bootstrap_checklist": {
     "master_md_present": true,
     "integration_branch_created": true,
-    "agents_md_present": false,
-    "claude_md_present": false,
-    "project_state_present": false,
-    "task_schema_present": false,
-    "change_request_schema_present": false,
-    "skill_registry_present": false,
-    "permissions_policy_present": false,
+    "agents_md_present": true,
+    "claude_md_present": true,
+    "project_state_present": true,
+    "task_schema_present": true,
+    "change_request_schema_present": true,
+    "skill_registry_present": true,
+    "permissions_policy_present": true,
     "ci_skeleton_present": false,
-    "codex_connection_tested": false,
+    "codex_connection_tested": true,
     "claude_connection_tested": false,
-    "parallel_branch_test_passed": false
+    "parallel_branch_test_passed": false,
+    "branch_protection_enforced": false,
+    "repository_private": false,
+    "research_workflow_present": false,
+    "initial_research_backlog_present": false
   }
 }
