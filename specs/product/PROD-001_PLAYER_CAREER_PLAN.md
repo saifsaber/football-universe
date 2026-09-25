@@ -1,5 +1,5 @@
 # PROD-001 — Player Career: Design and Agent Execution Blueprint
-Version: 0.1-proposed
+Version: 0.2-proposed
 Date: 2026-09-25
 Task: #6
 Authority: MASTER.md first, then repository authority chain and owner-approved amendments.
@@ -67,9 +67,9 @@ These are role assignments and PROPOSED packages, not READY tasks. Expand each i
 | P03 Technical architect | P02 draft, verified repo/tool inventory | Compare platform/engine; propose modules/input/simulation/render/save boundaries; later finalize after G6 | Decision record with trade-offs and test plan; no installs; draft is not G7 approval |
 | P04 Experimental prototype worker | Approved P02/P03 prototype contract and explicit DESIGN prototype permission | Greybox 3v3: move/pass/shoot, support/keeper AI, score/restarts | Reproducible complete match; no career/content scope; experiment is not production implementation |
 | P05 Human playtest and QA | P04 build, test script and actual consenting testers | Observe onboarding/control/AI; log failures and replay interest; recommend go/revise/stop | Human observations required; AI self-test cannot establish fun |
-| P06 Career/season designer | P05 pass and approved direction | Specify progression, selection, fixture/event graph, economy and ending conditions | Complete win/lose journeys, no farming/dead ends; core loop approval G3 |
+| P06 Career/season designer | Approved direction; P05 results when an authorized DESIGN experiment exists, otherwise explicit unvalidated hypotheses and an approved post-freeze validation plan | Specify progression, selection, fixture/event graph, economy and ending conditions | Complete win/lose journeys, no farming/dead ends; core loop approval G3 |
 | P12 Football data designer | G3, real-football requirement, owner identity decision | Identity/attribute/source schemas, provenance/verification and fictional/real separation | G4 approval; real facts sourced, identity scope explicit |
-| P13 Simulation and AI architect | G4, prototype measurements, P02 rules | Match state machine, AI behaviors, seed/replay strategy, deterministic test boundaries | G5 approval; explainability and reproducible failure cases |
+| P13 Simulation and AI architect | G4 and P02 rules; prototype measurements when available, otherwise documented assumptions and a measurement plan | Match state machine, AI behaviors, seed/replay strategy, deterministic test boundaries | G5 approval; explainability and reproducible failure cases |
 | P07 Art/audio/UX designer | G5, P06, platform proposal, approved asset constraints | Design sheet, screen journey, animations, sound list, accessibility and asset register | Gameplay-scale readability, all error states; owner direction approval G6 |
 | P08 Slice specification then implementation worker | Specification after G7; implementation only after G10 | Define G8 slice scope; later build creation → match → result → event/training → save → next fixture | G8 scope approved separately; production slice validated only after G10 |
 | P09 Content/integration worker | Validated production slice and approved content contracts | Fill one-season fixtures/events/opponents/assets, difficulty and endings | Every ending reachable; no broken references; full resume journey; no implicit merge authority |
@@ -96,6 +96,8 @@ G13: validated release candidate.
 G14: Human Release Approval, then authorized publication.
 
 Drafting earlier architectural ideas is allowed as design work; marking their gate passed out of order is not.
+
+If DESIGN experiments are not authorized, the authorized control process must explicitly accept outstanding validation risk before freeze, or keep G10 blocked pending separate experiment authorization. This risk acceptance cannot waive any mandatory evidence required by MASTER or another gate. Never label untested fun/performance criteria as passed. Failed post-freeze validation follows approved change control. P06/P13 can draft hypotheses without P05; content expansion still requires the fun gate.
 
 P03-DRAFT is technology research; P03-FINAL is the G7 technical architecture deliverable. P08-SPEC is the G8 scope document; P08-BUILD is production after G10. These are separate deliverables requiring separate approved task contracts, avoiding circular dependencies.
 
@@ -124,6 +126,7 @@ Every assignment receives: exact authority versions; approved task and gate evid
 
 Proposed path ownership, to verify/authorize per task:
 P01 reports/research/**; P02 specs/gameplay/**; P03 specs/technical/**; P04 design/prototypes/**; P05 reports/playtests/**; P06 specs/product/career/**; P12 specs/data/**; P13 specs/simulation/**; P07 design/** and specs/ux/** excluding prototype ownership; P08/P09 approved src/gameplay/**, src/career/**, src/persistence/**, src/ui/**, assets/** and corresponding tests/**; P10 reports/qa/**; P11 release documentation only unless deployment separately approved.
+P08-BUILD owns its exact approved production paths until its slice is accepted. P09 cannot claim overlapping paths until an authorized handoff records the accepted commit, transferred paths, outstanding defects and receiving owner. If P08 requires rework after transfer, obtain a new scoped ownership assignment; do not edit concurrently.
 Shared code/interfaces have one explicitly named owner and conflict check. Only State Manager updates PROJECT_STATE.json. Planning PROD-001 writes ONLY this file.
 
 ### Reusable task contract
@@ -159,3 +162,21 @@ Quota mode currently FIXED_LIMITS_UNVERIFIED_QUOTA; session/daily/weekly/monthly
 Engine, product positioning, platform, content quantities, real-player role and final fun acceptance remain explicit decisions. No calendar completion estimate is promised.
 
 Immediate deliverable: this design blueprint and PR. Next eligible scope: authorize/assign bounded P01 evidence work and resolve bootstrap integration ownership. Later packages are not executable merely because they appear here.
+
+## 10. First playable experience brief (proposed, not implemented)
+Working scene: an evening local-pitch trial. The player joins a teammate and keeper against a rival side. A short warm-up teaches movement, requesting a pass, receiving, passing and shooting through play. Then a short match begins; no dialogue dump or mandatory menus between touches.
+
+The intended interesting decision is creating space: move away from the ball to pull a defender, request a return pass, then choose an early shot or a safer pass. The teammate must respond visibly. The rival applies one simple, readable pressing pattern. Sprinting spends stamina; movement without sprint remains useful. No numerical tuning is accepted until tested.
+
+A complete result screen explains three observable contributions (for example completed pass, recovered ball, shot on target) using actual match events. A coach responds to those events. Winning and losing both lead to a short career choice and safe save checkpoint; a loss must not force replaying the tutorial. Returning from a saved checkpoint must not duplicate rewards.
+
+Prototype acceptance:
+- Start, tutorial, live play, score/restart, full time and result can all be reached.
+- User has direct control of one outfield player; passing transfers the ball, not player control.
+- Teammate offers a reachable passing option; opponents and keepers recover after turnover/restart.
+- A missed shot, conceded goal and lost match have explicit recovery paths.
+- Pause/resume does not advance match time; focus loss behavior is specified and tested.
+- Approved tester observations distinguish control problems, decision clarity and replay interest.
+Placeholder art is acceptable in the authorized experiment; it is never presented as final polish.
+
+Role handoff for this scene: P02 owns the rules/input contract; P03-DRAFT proposes technical feasibility; authorized P04 implements only the scoped experiment; P05 reports human observations; P06 uses them for career design where available. This scene brief grants none of those packages execution permission.
